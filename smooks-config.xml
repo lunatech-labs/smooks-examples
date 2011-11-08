@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
 <smooks-resource-list xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd" xmlns:fl="http://www.milyn.org/xsd/smooks/fixed-length-1.3.xsd">
-    <fl:reader fields="fruit[4],quantity[3]" />
+    <fl:reader fields="fruit[4],quantity[3]">
+            <fl:listBinding beanId="fruits" class="models.Fruit" />
+    </fl:reader>
 </smooks-resource-list>

@@ -12,6 +12,11 @@
             <artifactId>milyn-smooks-core</artifactId>
             <version>1.5</version>
         </dependency>
+           <dependency>
+            <groupId>org.milyn</groupId>
+            <artifactId>milyn-smooks-fixed-length</artifactId>
+            <version>1.5</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

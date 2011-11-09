@@ -1,0 +1,25 @@
+
+UNB+UNOC:1+56205507900361+M934+111109:0140+1314++PRICAT'
+    UNH+1+PRICAT:D:96A:UN+PRICAT'                        << start message       [boiler-plate]
+        BGM+9:::PRODUCT MASTER DATA+FRUIT-1'                                    [some boiler-plate + product code]
+        DTM+137:1111090140:201'                                                 [datetime of fruit.txt file]
+        RFF+ACJ:FRUIT-1::C'                              << product code        [product code]
+        PGI+11'                                          << product group       [boiler-plate]
+        LIN+1'                                                                  [bp]
+        IMD+A++:::Apple'                                 << item description    [product description]
+        MEA+AAI++KGM:0.184'                              << item weight (kg)    [product weight]
+        MEA+VOL++CDM:0.464'                              << item volume (dm^3)  [product volume]
+        QTY+189:1'                                       << quantity per SKU    [quantity]
+    UNT+11+1'                                            << end message         [boiler-plate]
+    UNH+2+PRICAT:D:96A:UN+PRICAT'
+        BGM+9:::PRODUCT MASTER DATA+FRUIT-2'
+        DTM+137:1111090140:201'
+        RFF+ACJ:FRUIT-2::U'
+        PGI+11'
+        LIN+1'
+        IMD+A++:::Pear'
+        MEA+AAI++KGM:2.2'
+        MEA+VOL++CDM:1.68'
+        QTY+189:1'
+    UNT+11+2'
+UNZ+2+1314'

@@ -1,2 +1,4 @@
-pear002
-aple002
+pear     002
+apple    002
+banana   004
+grape    006

@@ -16,13 +16,15 @@ import java.util.List;
  */
 public class App {
       public static void main(String[] args) throws IOException, SAXException {
+          System.out.println("Starting program.");
           Smooks smooks = new Smooks("smooks-config.xml");
           JavaResult result = new JavaResult();
           smooks.filterSource(new StreamSource(new File("fruit.txt")), result);
           List<Fruit> fruits =(List<Fruit>) result.getBean("fruits");
+          smooks.close();
+          System.out.println(String.format("We have this many fruits: %s", fruits.size()));
           for (Fruit fruit: fruits) {
               System.out.println(fruit.getFruit());
           }
-          smooks.close();
       }
 }

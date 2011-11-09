@@ -23,5 +23,6 @@ public class App {
           for (Fruit fruit: fruits) {
               System.out.println(fruit.getFruit());
           }
+          smooks.close();
       }
 }

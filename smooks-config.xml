@@ -3,4 +3,6 @@
     <fl:reader fields="productCode[8],fruit[10],quantity[3],weight[3],volume[3]">
             <fl:listBinding beanId="fruits" class="models.Fruit" />
     </fl:reader>
+
+
 </smooks-resource-list>

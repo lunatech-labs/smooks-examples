@@ -8,10 +8,10 @@
         <fl:listBinding beanId="fruits" class="models.Fruit"/>
     </fl:reader>
 
-    <jb:bean beanId="juice" class="models.Juice" createOnElement="juice">
+    <!--<jb:bean beanId="juice" class="models.Juice" createOnElement="juice">
         <jb:value  property="flavour"  data="flavour" />
     </jb:bean>
-
+-->
     <ftl:freemarker applyOnElement="set">
         <ftl:template><!--
         <#list fruits as fruit>

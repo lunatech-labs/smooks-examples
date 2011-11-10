@@ -4,6 +4,10 @@ package models;
  * @author Ludovico Fischer
  */
 public class Juice {
+    public String getFlavour() {
+        return flavour;
+    }
+
     private String flavour;
 
     public Juice() {

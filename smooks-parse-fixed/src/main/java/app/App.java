@@ -26,8 +26,8 @@ public class App {
         for (Fruit fruit : fruits) {
             System.out.println(fruit.getFruit());
         }
-//        System.out.println(writeOutput());
-//        System.out.println(writeJuiceOutput(new Juice(fruits.get(0))));
+        System.out.println(writeOutput());
+        System.out.println(writeJuiceOutput(new Juice(fruits.get(0))));
 
     }
 
@@ -56,7 +56,7 @@ public class App {
     }
 
     public static String writeJuiceOutput(Juice juice) throws IOException, SAXException {
-        Smooks smooks = new Smooks("smooks-config.xml");
+        Smooks smooks = new Smooks();
         try {
            StringWriter writer = new StringWriter();
             smooks.filterSource(new JavaSource(juice), new StreamResult(writer));

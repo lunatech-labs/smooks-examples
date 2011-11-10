@@ -1,11 +1,12 @@
 package app;
 
 import models.Fruit;
+import models.Juice;
 import org.milyn.Smooks;
-import org.milyn.container.ApplicationContext;
 import org.milyn.container.ExecutionContext;
 import org.milyn.event.report.HtmlReportGenerator;
 import org.milyn.payload.JavaResult;
+import org.milyn.payload.JavaSource;
 import org.xml.sax.SAXException;
 
 import javax.xml.transform.stream.StreamResult;
@@ -25,7 +26,9 @@ public class App {
         for (Fruit fruit : fruits) {
             System.out.println(fruit.getFruit());
         }
-        System.out.println(writeOutput());
+//        System.out.println(writeOutput());
+//        System.out.println(writeJuiceOutput(new Juice(fruits.get(0))));
+
     }
 
     private static List<Fruit> readFixedWidthFile() throws IOException, SAXException {
@@ -44,14 +47,22 @@ public class App {
     private static String writeOutput() throws IOException, SAXException {
         Smooks smooks = new Smooks("smooks-config.xml");
         try {
-            ExecutionContext executionContext = smooks.createExecutionContext();
-            executionContext.setEventListener(new HtmlReportGenerator("target/reports/report.html"));
             StringWriter writer = new StringWriter();
-            smooks.filterSource(executionContext, new StreamSource(new File("fruit.txt")), new StreamResult(writer));
+            smooks.filterSource(new StreamSource(new File("fruit.txt")), new StreamResult(writer));
             return writer.toString();
         }   finally {
             smooks.close();
         }
     }
 
+    public static String writeJuiceOutput(Juice juice) throws IOException, SAXException {
+        Smooks smooks = new Smooks("smooks-config.xml");
+        try {
+           StringWriter writer = new StringWriter();
+            smooks.filterSource(new JavaSource(juice), new StreamResult(writer));
+            return writer.toString();
+        }  finally {
+            smooks.close();
+        }
+    }
 }

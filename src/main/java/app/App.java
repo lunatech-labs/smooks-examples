@@ -2,6 +2,9 @@ package app;
 
 import models.Fruit;
 import org.milyn.Smooks;
+import org.milyn.container.ApplicationContext;
+import org.milyn.container.ExecutionContext;
+import org.milyn.event.report.HtmlReportGenerator;
 import org.milyn.payload.JavaResult;
 import org.xml.sax.SAXException;
 
@@ -41,8 +44,10 @@ public class App {
     private static String writeOutput() throws IOException, SAXException {
         Smooks smooks = new Smooks("smooks-config.xml");
         try {
+            ExecutionContext executionContext = smooks.createExecutionContext();
+            executionContext.setEventListener(new HtmlReportGenerator("target/reports/report.html"));
             StringWriter writer = new StringWriter();
-            smooks.filterSource(new StreamSource(new File("fruit.txt")), new StreamResult(writer));
+            smooks.filterSource(executionContext, new StreamSource(new File("fruit.txt")), new StreamResult(writer));
             return writer.toString();
         }   finally {
             smooks.close();

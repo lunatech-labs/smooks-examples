@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.lunatech</groupId>
+    <artifactId>smooks-parse-custom-edi</artifactId>
+    <version>0.1-alpha</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.milyn</groupId>
+            <artifactId>milyn-smooks-core</artifactId>
+            <version>1.5</version>
+        </dependency>
+           <dependency>
+            <groupId>org.milyn</groupId>
+            <artifactId>milyn-smooks-edi</artifactId>
+            <version>1.5</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <mainClass>app.App</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+            <groupId>org.milyn</groupId>
+            <artifactId>maven-ejc-plugin</artifactId>
+            <version>1.5</version>
+            <configuration>
+                <ediMappingFile>edi-model.xml</ediMappingFile>
+                <packageName>com.acme.order.model</packageName>
+            </configuration>
+            <executions>
+                <execution><goals><goal>generate</goal></goals></execution>
+            </executions>
+        </plugin>
+        </plugins>
+    </build>
+    <repositories>
+        <repository>
+            <id>smooks-staging</id>
+            <name>Codehaus Snapshots</name>
+            <url>https://nexus.codehaus.org/content/repositories/orgmilyn-009/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+</project>

@@ -4,10 +4,13 @@
                       xmlns:ftl="http://www.milyn.org/xsd/smooks/freemarker-1.1.xsd"
                       xmlns:jb="http://www.milyn.org/xsd/smooks/javabean-1.4.xsd">
 
-    <jb:bean beanId="juice" class="models.Juice" createOnElement="juice">
-        <jb:value  property="flavour"  data="flavour" />
-    </jb:bean>
-                 <ftl:freemarker applyOnElement="models.Juice">
+    <reader>
+        <features>
+            <setOff feature="http://www.smooks.org/sax/features/generate-java-event-stream"/>
+        </features>
+    </reader>
+
+    <ftl:freemarker applyOnElement="#document">
         <ftl:template>   <!--
         Our juice flavour is: ${juice.flavour}
         -->

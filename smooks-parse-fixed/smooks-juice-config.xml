@@ -4,17 +4,14 @@
                       xmlns:ftl="http://www.milyn.org/xsd/smooks/freemarker-1.1.xsd"
                       xmlns:jb="http://www.milyn.org/xsd/smooks/javabean-1.4.xsd">
 
-    <fl:reader fields="productCode[8],fruit[10],quantity[3],weight[3],volume[3]" >
-        <fl:listBinding beanId="fruits" class="models.Fruit"/>
-    </fl:reader>
-
-
-<ftl:freemarker applyOnElement="set">
+    <jb:bean beanId="juice" class="models.Juice" createOnElement="juice">
+        <jb:value  property="flavour"  data="flavour" />
+    </jb:bean>
+                 <ftl:freemarker applyOnElement="models.Juice">
         <ftl:template>   <!--
-        <#list fruits as fruit>
-        ${fruit.fruit?right_pad(10)}${fruit.productCode?right_pad(8)}
-        </#list>
+        Our juice flavour is: ${juice.flavour}
         -->
         </ftl:template>
     </ftl:freemarker>
+
 </smooks-resource-list>

@@ -56,10 +56,12 @@ public class App {
     }
 
     public static String writeJuiceOutput(Juice juice) throws IOException, SAXException {
-        Smooks smooks = new Smooks();
+        Smooks smooks = new Smooks("smooks-juice-config.xml");
         try {
+            ExecutionContext context = smooks.createExecutionContext();
+            context.setEventListener(new HtmlReportGenerator("target/reports/report.html"));
            StringWriter writer = new StringWriter();
-            smooks.filterSource(new JavaSource(juice), new StreamResult(writer));
+            smooks.filterSource(context, new JavaSource(juice), new StreamResult(writer));
             return writer.toString();
         }  finally {
             smooks.close();

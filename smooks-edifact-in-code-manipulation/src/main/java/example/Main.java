@@ -95,9 +95,7 @@ public class Main {
         myInvoice.getSegmentGroup2().get(0).getNADNameAndAddress().getC080PartyName().setE30361PartyName("Lunatech");
 
 
-        /*-----------------------------------
-        Write interchange to Stdout...
-        ------------------------------------*/
+        /*Write modified interchange to Stdout*/
         StringWriter ediOutStream2 = new StringWriter();
 
         factory.toUNEdifact(interchange, ediOutStream2);

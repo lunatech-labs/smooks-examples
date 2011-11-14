@@ -1,7 +1,17 @@
 <?xml version="1.0"?>
 <smooks-resource-list
-	xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd"
-	xmlns:edi="http://www.milyn.org/xsd/smooks/edi-1.1.xsd"
-        xmlns:unedifact="http://www.milyn.org/xsd/smooks/unedifact-1.4.xsd">
-                  <unedifact:reader mappingModel="urn:org.milyn.edi.unedifact:d01a-mapping:*" ignoreNewLines="true" />
-	</smooks-resource-list>
+        xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd"
+        xmlns:unedifact="http://www.milyn.org/xsd/smooks/unedifact-1.4.xsd"
+        xmlns:ftl="http://www.milyn.org/xsd/smooks/freemarker-1.1.xsd">
+
+    <unedifact:reader mappingModel="urn:org.milyn.edi.unedifact:d01a-mapping:*" ignoreNewLines="false"/>
+    <resource-config selector="e1154">
+        <resource>org.milyn.delivery.DomModelCreator</resource>
+    </resource-config>
+    <ftl:freemarker applyOnElement="unEdifact">
+        <ftl:template>
+            <!--
+            ${e1154}   -->
+        </ftl:template>
+    </ftl:freemarker>
+</smooks-resource-list>

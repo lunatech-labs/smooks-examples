@@ -8,10 +8,12 @@
     <resource-config selector="e1154">
         <resource>org.milyn.delivery.DomModelCreator</resource>
     </resource-config>
+
     <ftl:freemarker applyOnElement="unEdifact">
         <ftl:template>
             <!--
             ${e1154}   -->
         </ftl:template>
     </ftl:freemarker>
+
 </smooks-resource-list>

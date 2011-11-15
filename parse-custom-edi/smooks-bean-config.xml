@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<smooks-resource-list
+        xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd"
+        xmlns:jb="http://www.milyn.org/xsd/smooks/javabean-1.4.xsd"
+        xmlns:unedifact="http://www.milyn.org/xsd/smooks/unedifact-1.4.xsd">
+
+    <unedifact:reader mappingModel="urn:org.milyn.edi.unedifact:d01a-mapping:*" ignoreNewLines="false"/>
+   
+    <jb:bean beanId="strangeFruit" class="models.StrangeFruit" createOnElement="RFF">
+      <jb:value property="code" data="RFF/C506/e1154"/>
+    </jb:bean>  
+</smooks-resource-list>

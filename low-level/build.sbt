@@ -1,4 +1,4 @@
-name := "Smooks low level API demo"
+name := "low-level"
 
 version :=  "0.1-alpha"
 

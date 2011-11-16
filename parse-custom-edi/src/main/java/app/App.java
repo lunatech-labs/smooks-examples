@@ -9,6 +9,9 @@ import org.milyn.payload.StringResult;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import java.io.*;
@@ -30,16 +33,23 @@ public class App {
             smooks.close();
         }
 
+        StrangeFruit fruit;
         Smooks smooksSecond = new Smooks("smooks-bean-config.xml");
         try {
             JavaResult result = new JavaResult();
             smooksSecond.filterSource(new StreamSource(new ByteArrayInputStream(StreamUtils.readStream(new
                     FileInputStream("fruit.edi")))), result);
-            StrangeFruit fruit = (StrangeFruit) result.getBean("strangeFruit");
+            fruit = (StrangeFruit) result.getBean("strangeFruit");
             System.out.println(fruit.getCode());
         } finally {
             smooksSecond.close();
         }
 
+        EntityManagerFactory  entityManagerFactory = Persistence.createEntityManagerFactory("some.name");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        entityManager.getTransaction().begin();
+        entityManager.persist(fruit);
+        entityManager.getTransaction().commit();
+        entityManager.close();
     }
 }

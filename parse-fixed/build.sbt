@@ -1,4 +1,4 @@
-name := "smooks-parse-fixed"
+name := "parse-fixed"
 
 version := "0.1-alpha"
 

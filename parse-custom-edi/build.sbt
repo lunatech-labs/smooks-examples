@@ -7,7 +7,9 @@ libraryDependencies ++= Seq(
                     "org.milyn" % "milyn-smooks-templating" % "1.5",
                     "org.milyn.edi.unedifact" % "d01a-mapping" % "1.5-SNAPSHOT",
                     "org.hibernate.javax.persistence" % "hibernate-jpa-2.0-api" % "1.0.1.Final",
-                    "org.hibernate" % "hibernate-core" % "3.6.8.Final"                
+                    "org.hibernate" % "hibernate-core" % "3.6.8.Final",
+                    "org.hibernate" % "hibernate-entitymanager" % "3.6.8.Final",
+                    "com.h2database" % "h2" % "1.3.161"                
 )
 
 resolvers ++= Seq(

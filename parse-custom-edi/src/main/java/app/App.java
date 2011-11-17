@@ -28,7 +28,7 @@ public class App {
         try {
             ExecutionContext executionContext = smooks.createExecutionContext();
             executionContext.setEventListener(new HtmlReportGenerator("target/reports/report.html"));
-            smooks.filterSource(executionContext, new StreamSource(new ByteArrayInputStream(StreamUtils.readStream(new FileInputStream("fruit.edi")))), new StringResult());
+            smooks.filterSource(executionContext, new StreamSource(new ByteArrayInputStream(StreamUtils.readStream(new FileInputStream("samples/fruit.edi")))), new StringResult());
         } finally {
             smooks.close();
         }
@@ -38,7 +38,7 @@ public class App {
         try {
             JavaResult result = new JavaResult();
             smooksSecond.filterSource(new StreamSource(new ByteArrayInputStream(StreamUtils.readStream(new
-                    FileInputStream("fruit.edi")))), result);
+                    FileInputStream("samples/fruit.edi")))), result);
             fruit = (StrangeFruit) result.getBean("strangeFruit");
             System.out.println(fruit.getCode());
         } finally {

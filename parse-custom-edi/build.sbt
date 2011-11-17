@@ -11,7 +11,5 @@ libraryDependencies ++= Seq(
 )
 
 resolvers ++= Seq(
-          "Smooks staging repository" at "https://nexus.codehaus.org/content/repositories/orgmilyn-009",
-          "Smooks EDIFACT mappings" at "https://nexus.codehaus.org/content/repositories/snapshots/",
           "JBoss repository" at "http://repository.jboss.org/nexus/content/groups/public-jboss/"
 )

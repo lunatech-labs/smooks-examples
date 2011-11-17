@@ -16,7 +16,7 @@ import java.io.IOException;
 public class App {
     public static void  main(String[] ars) throws IOException, SAXException {
         Fruit apple = new Fruit();
-        Smooks smooks = new Smooks("smooks-config.xml");
+        Smooks smooks = new Smooks("low-level/smooks-config.xml");
         try {
             JavaSource source = new JavaSource(apple);
             ExecutionContext executionContext = smooks.createExecutionContext();

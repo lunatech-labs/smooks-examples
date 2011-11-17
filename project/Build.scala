@@ -2,7 +2,7 @@ import sbt._
 import Keys._
 
 object SmooksExperiments extends Build {
-       lazy val root = Project(id = "smooks-examples",
+       lazy val root = Project(id = "smooks-experiments",
                                base = file("."))
        lazy val smooksParseFixed = Project(id = "parse-fixed",
                                              base = file("parse-fixed")) dependsOn(root)
@@ -13,8 +13,11 @@ object SmooksExperiments extends Build {
        lazy val inCodeManipulation = Project(id ="edifact-in-code-manipulation",
                                              base = file("edifact-in-code-manipulation")) dependsOn(root)
 
-        lazy val fromScratch = Project(id ="write-edi-from-scratch",
+      lazy val fromScratch = Project(id ="write-edi-from-scratch",
                                              base = file("write-edi-from-scratch")) dependsOn(root)
+
+       lazy val parseCustomEdi = Project(id="parse-custom-edi",
+                                         base = file("parse-custom-edi")) dependsOn(root)
 
        override lazy val settings = super.settings ++
        Seq(                          

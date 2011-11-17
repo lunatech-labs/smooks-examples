@@ -9,6 +9,7 @@ libraryDependencies ++= Seq(
                     "org.hibernate.javax.persistence" % "hibernate-jpa-2.0-api" % "1.0.1.Final",
                     "org.hibernate" % "hibernate-core" % "3.6.8.Final",
                     "org.hibernate" % "hibernate-entitymanager" % "3.6.8.Final",
+                    "org.hibernate" % "hibernate-jpamodelgen" % "1.1.1.Final",
                     "com.h2database" % "h2" % "1.3.161"                
 )
 

@@ -94,7 +94,8 @@ public class Main {
         List<UNEdifactMessage41> messageList = interchange41.getMessages();
         UNEdifactMessage41 myMessage =  messageList.get(0);
         Invoic myInvoice = (Invoic) myMessage.getMessage();
-        myInvoice.getSegmentGroup2().get(0).getNADNameAndAddress().getC080PartyName().setE30361PartyName("Lunatech");
+//        No output validation under the segment level !
+        myInvoice.getSegmentGroup2().get(0).getNADNameAndAddress().getC080PartyName().setE30361PartyName("Lunatech 1234567890 1234567890 1234567890 A");
 
 
         /*-----------------------------------

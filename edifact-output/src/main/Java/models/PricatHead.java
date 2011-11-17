@@ -63,7 +63,11 @@ public class PricatHead implements Serializable {
 
  public BigDecimal tLength;
 
- public String description;
+    public String getDescription() {
+        return description;
+    }
+
+    public String description;
 
  public String accountNum;
 

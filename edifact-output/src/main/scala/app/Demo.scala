@@ -2,9 +2,6 @@ package app
 
 import org.milyn.Smooks
 import org.milyn.event.report.HtmlReportGenerator
-import java.io.FileInputStream
-import org.milyn.io.StreamUtils
-import javax.xml.transform.stream.StreamSource
 import models.PricatHead
 import org.milyn.payload.{StringResult, JavaSource}
 import java.sql.Timestamp

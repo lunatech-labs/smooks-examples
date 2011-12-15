@@ -35,7 +35,7 @@ public class App {
         Smooks smooks = new Smooks("smooks-config.xml");
         try {
             JavaResult result = new JavaResult();
-            smooks.filterSource(new StreamSource(new File("fruit.txt")), result);
+            smooks.filterSource(new StreamSource(new File("samples/fruit.txt")), result);
             List<Fruit> fruits = (List<Fruit>) result.getBean("fruits");
             return fruits;
         } finally {
@@ -48,7 +48,7 @@ public class App {
         Smooks smooks = new Smooks("smooks-config.xml");
         try {
             StringWriter writer = new StringWriter();
-            smooks.filterSource(new StreamSource(new File("fruit.txt")), new StreamResult(writer));
+            smooks.filterSource(new StreamSource(new File("samples/fruit.txt")), new StreamResult(writer));
             return writer.toString();
         }   finally {
             smooks.close();

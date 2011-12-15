@@ -44,7 +44,7 @@ public class Main {
         D93AInterchangeFactory factory = D93AInterchangeFactory.getInstance();
 
         // Deserialize the UN/EDIFACT interchange stream to Java...
-        InputStream stream = new FileInputStream("INVOIC.edi");
+        InputStream stream = new FileInputStream("samples/INVOIC.edi");
 
         /*------------------------------------------
         Read the interchange to Java Objects...
